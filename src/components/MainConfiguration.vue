@@ -1,7 +1,14 @@
 <template>
   <div>
     Please Enter Tonnage
-    <input/>
+    <input class="tonnageInput"/>
+    <div>
+      Please Enter Movement
+      <input v-model='walkingSpeed' @keyup='calculateRun' class="movementInput"/>
+    </div>
+    <div class="runningSpeed">
+      Running Speed: {{runningSpeed}}
+    </div>
   </div>
 </template>
 
@@ -10,7 +17,15 @@ export default {
   name: 'MechGenerator',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Begin entering your \'mech data',
+      walkingSpeed: 0,
+      runningSpeed: 0,
+      BattleMech
+    }
+  },
+  methods: {
+    calculateRun () {
+      this.runningSpeed = Math.round(this.walkingSpeed * 1.5)
     }
   }
 }
