@@ -19,8 +19,7 @@ export default {
     return {
       msg: 'Begin entering your \'mech data',
       walkingSpeed: 0,
-      runningSpeed: 0,
-      BattleMech
+      runningSpeed: 0
     }
   },
   methods: {
